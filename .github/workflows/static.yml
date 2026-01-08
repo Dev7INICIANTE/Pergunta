@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Tenho uma pergunta pra você...</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Oi, Suh 💖</h1>
+    <p>Eu tenho uma pergunta muito especial pra te fazer...</p>
+    <h2>Você quer namorar comigo?</h2>
+
+    <div class="buttons">
+      <button onclick="responderSim()">Sim 🥰</button>
+      <button id="btnNao" onmouseover="fugir()" onclick="fugir()">Não 😢</button>
+    </div>
+
+    <p id="resposta"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+body {
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  padding: 50px;
+  color: #333;
+}
+
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.buttons button {
+  padding: 15px 25px;
+  margin: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttons button:hover {
+  transform: scale(1.1);
+}
+
+button:nth-child(1) {
+  background-color: #ff69b4;
+  color: white;
+}
+
+button:nth-child(2) {
+  background-color: #aaa;
+  color: white;
+  position: relative;
+}
+</style>
+
+
+<script>
+function responderSim() {
+  document.getElementById("resposta").innerHTML = "Aaaaaaah! Eu sabia!! 💖💖💖";
+}
+
+function fugir() {
+  const btn = document.getElementById("btnNao");
+  const maxX = window.innerWidth - btn.offsetWidth;
+  const maxY = window.innerHeight - btn.offsetHeight;
+  const aleatorioX = Math.floor(Math.random() * maxX);
+  const aleatorioY = Math.floor(Math.random() * maxY);
+
+  btn.style.position = "absolute";
+  btn.style.left = aleatorioX + "px";
+  btn.style.top = aleatorioY + "px";
+}
+</script>
+</html>
